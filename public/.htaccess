@@ -2,14 +2,14 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
-# Keep real files and directories, including _next assets and brand images.
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
 # Serve clean URLs from the generated static HTML files.
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Keep real files and directories, including _next assets, article pages and images.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
 # Let Apache serve the generated 404 page for unknown routes.
 ErrorDocument 404 /404.html
