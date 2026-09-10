@@ -885,6 +885,7 @@ export type InsightArticle = {
   date: string;
   readMin: number;
   standfirst: string;
+  image?: string;
   sections: { title: string; body: string }[];
 };
 
@@ -922,6 +923,7 @@ export const insightArticles: InsightArticle[] = [
     author: 'Krishna Gollamudi',
     date: '25 August 2026',
     readMin: 6,
+    image: '/images/insights/cert-in-incident-reporting-thumb.webp',
     standfirst:
       'Six hours is not a recovery window. It is a decision window, and it cannot be met by a process that begins with scheduling a meeting.',
     sections: [
@@ -951,6 +953,7 @@ export const insightArticles: InsightArticle[] = [
     author: 'Krishna Gollamudi',
     date: '20 August 2026',
     readMin: 5,
+    image: '/images/insights/dpdp-act-compliance-thumb.webp',
     standfirst:
       'Data protection readiness starts with knowing what personal data you hold, why you hold it and what happens when the purpose ends.',
     sections: [
@@ -980,6 +983,7 @@ export const insightArticles: InsightArticle[] = [
     author: 'Krishna Gollamudi',
     date: '10 August 2026',
     readMin: 5,
+    image: '/images/insights/cyber-training-business-case-thumb.webp',
     standfirst:
       'A fundable training case connects employer expectations, a baseline of current readiness and an outcome the institution already measures.',
     sections: [
@@ -1009,6 +1013,7 @@ export const insightArticles: InsightArticle[] = [
     author: 'Krishna Gollamudi',
     date: '6 July 2026',
     readMin: 5,
+    image: '/images/insights/cybersecurity-skills-gap-india-thumb.webp',
     standfirst:
       'The distance between a syllabus and the first ninety days in a security operations role is where many hiring and onboarding problems begin.',
     sections: [
@@ -1038,6 +1043,7 @@ export const insightArticles: InsightArticle[] = [
     author: 'Krishna Gollamudi',
     date: '22 June 2026',
     readMin: 6,
+    image: '/images/insights/how-fast-are-leaked-credentials-exploited-thumb.webp',
     standfirst:
       'A leaked password can be tested quickly. The operational question is how soon the organisation will know and what it can do next.',
     sections: [
@@ -1067,6 +1073,7 @@ export const insightArticles: InsightArticle[] = [
     author: 'Krishna Gollamudi',
     date: '3 September 2026',
     readMin: 7,
+    image: '/images/insights/imo-cyber-risk-management-indian-shipping-thumb.webp',
     standfirst:
       'Maritime cyber risk belongs in the existing safety-management framework, where operational ownership and audit evidence matter as much as technical controls.',
     sections: [

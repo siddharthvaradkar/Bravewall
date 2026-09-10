@@ -293,13 +293,29 @@ function BfsiDecisionMap() {
   );
 }
 
-function EditorialSignal({ index, title, meta }: { index: number; title: string; meta?: string }) {
+function EditorialSignal({
+  index,
+  title,
+  meta,
+  image,
+}: {
+  index: number;
+  title: string;
+  meta?: string;
+  image?: string;
+}) {
   const signals = ['06h', 'DATA', 'ID', 'ROLE', 'CASE', 'OT', 'CTRL'];
   return (
-    <div className="editorial-signal" aria-hidden="true">
-      <span>{meta?.split('·')[0]?.trim() ?? 'Insight'}</span>
-      <strong>{signals[index % signals.length]}</strong>
-      <i>{String(index + 1).padStart(2, '0')} / {title.split(' ').slice(0, 3).join(' ')}</i>
+    <div className="editorial-signal">
+      {image ? (
+        <Image src={image} alt="" width={900} height={600} unoptimized />
+      ) : (
+        <>
+          <span>{meta?.split('·')[0]?.trim() ?? 'Insight'}</span>
+          <strong>{signals[index % signals.length]}</strong>
+          <i>{String(index + 1).padStart(2, '0')} / {title.split(' ').slice(0, 3).join(' ')}</i>
+        </>
+      )}
     </div>
   );
 }
@@ -491,7 +507,12 @@ function Cards({
           const content = (
             <>
               {section.kind === 'articles' && (
-                <EditorialSignal index={index} title={card.title} meta={card.meta} />
+                <EditorialSignal
+                  index={index}
+                  title={card.title}
+                  meta={card.meta}
+                  image={card.image}
+                />
               )}
               {section.kind !== 'articles' && card.image && (
                 <div className="card-image-slot" aria-hidden="true">

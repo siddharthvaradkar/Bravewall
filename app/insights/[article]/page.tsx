@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import type { AnchorHTMLAttributes } from 'react';
@@ -94,10 +95,17 @@ export default async function ArticlePage({
               <span>Published: {item.date}</span>
               <span>{item.readMin} min read</span>
             </div>
-            <div
-              className="article-placeholder"
-              aria-label={`${item.title} visual placeholder. Approved visual asset pending.`}
-            />
+            {item.image ? (
+              <figure className="article-hero-image">
+                <Image src={item.image} alt="" width={900} height={600} unoptimized priority />
+                <figcaption className="sr-only">Editorial visual for {item.title}</figcaption>
+              </figure>
+            ) : (
+              <div
+                className="article-placeholder"
+                aria-label={`${item.title} visual placeholder. Approved visual asset pending.`}
+              />
+            )}
             {item.sections.map((section) => (
               <section key={section.title}>
                 <h2>{section.title}</h2>
