@@ -9,3 +9,5 @@ dist/
 .idea/
 *.swp
 .wrangler/
+desktop.ini
+.vinext/
